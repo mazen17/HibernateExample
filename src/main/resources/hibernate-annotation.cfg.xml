@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- Database connection properties - Driver, URL, user, password -->
+		<property name="hibernate.connection.driver_class">org.mariadb.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mariadb://diana:3306/hibernate</property>
+		<property name="hibernate.connection.username">spring</property>
+		<property name="hibernate.connection.password">spring</property>
+		
+		<!-- org.hibernate.HibernateException: No CurrentSessionContext configured! -->
+		<property name="hibernate.current_session_context_class">thread</property>
+		<property name="hibernate.hbm2ddl.auto">create</property>
+				
+		
+		<!-- Mapping with model class containing annotations -->
+		<mapping class="com.journaldev.hibernate.model.Employee1"/>
+		<mapping class="com.journaldev.hibernate.model.Employee2"/>
+		<mapping class="com.journaldev.hibernate.model.Employee3"/>
+		
+		<mapping class="com.journaldev.hibernate.model.HourlyEmployee"/>
+		<mapping class="com.journaldev.hibernate.model.TimeCard"/>
+		<mapping class="com.journaldev.hibernate.model.TimeCard3"/>
+		
+		<mapping class="com.journaldev.hibernate.entities.TimeCardEntity"/>
+		<mapping class="com.journaldev.hibernate.entities.EmployeeEntity"/>
+		
+		
+	</session-factory>
+</hibernate-configuration>
